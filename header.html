@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GosafeyRide</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
-            padding-top: 80px; /* Space for fixed nav */
+            padding-top: 80px;
+            /* Space for fixed nav */
         }
 
         .glass-nav {
@@ -68,22 +70,27 @@
                 <a href="about.html" target="_top" class="hover:text-blue-600 transition-colors">About Us</a>
                 <a href="services.html" target="_top" class="hover:text-blue-600 transition-colors">Services</a>
                 <a href="safety.html" target="_top" class="hover:text-blue-600 transition-colors">Safety</a>
-                <a href="privacy-policy.html" target="_top" class="hover:text-blue-600 transition-colors whitespace-nowrap">Privacy Policy</a>
-                <a href="terms.html" target="_top" class="hover:text-blue-600 transition-colors whitespace-nowrap">Terms & Conditions</a>
-                <a href="refund-policy.html" target="_top" class="hover:text-blue-600 transition-colors whitespace-nowrap">Refund Policy</a>
+                <a href="privacy-policy.html" target="_top"
+                    class="hover:text-blue-600 transition-colors whitespace-nowrap">Privacy Policy</a>
+                <a href="terms.html" target="_top" class="hover:text-blue-600 transition-colors whitespace-nowrap">Terms
+                    & Conditions</a>
+                <a href="refund-policy.html" target="_top"
+                    class="hover:text-blue-600 transition-colors whitespace-nowrap">Refund Policy</a>
                 <a href="contact.html" target="_top" class="hover:text-blue-600 transition-colors">Contact Us</a>
             </div>
 
             <!-- Right Side -->
             <div class="flex items-center gap-4 shrink-0">
-                <button class="bg-slate-900 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-blue-600 transition-all hidden sm:block">
+                <a href="GoSafeRide.apk" download
+                    class="bg-slate-900 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-blue-600 transition-all hidden sm:block">
                     Get App
-                </button>
+                </a>
 
                 <!-- Mobile Toggle Button -->
                 <button class="lg:hidden text-slate-900 p-2" id="mobile-menu-btn" aria-label="Open Menu">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
             </div>
@@ -91,7 +98,8 @@
     </nav>
 
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-[300px] bg-white shadow-[-10px_0_30px_rgba(0,0,0,0.1)] z-[999] p-8 lg:hidden">
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-[300px] bg-white shadow-[-10px_0_30px_rgba(0,0,0,0.1)] z-[999] p-8 lg:hidden">
         <div class="flex justify-between items-center mb-10">
             <span class="text-2xl font-extrabold text-slate-900">Menu</span>
             <button id="close-mobile-menu" class="p-2 text-slate-400 hover:text-slate-900 transition-colors">
@@ -111,7 +119,8 @@
             <a href="refund-policy.html" class="hover:text-blue-600 text-base">Refund Policy</a>
             <a href="contact.html" class="pt-4 border-t border-slate-100 hover:text-blue-600">Contact Us</a>
 
-            <button class="mt-6 bg-blue-600 text-white py-4 rounded-2xl shadow-lg shadow-blue-200 font-bold active:scale-95 transition-transform">
+            <button
+                class="mt-6 bg-blue-600 text-white py-4 rounded-2xl shadow-lg shadow-blue-200 font-bold active:scale-95 transition-transform">
                 Download App
             </button>
         </div>
@@ -150,4 +159,5 @@
     </script>
 
 </body>
+
 </html>
