@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | GoSafey Ride - Pilot Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #f8fafc; 
+            color: #1e293b; 
+            overflow-x: hidden;
+        }
+
+        /* Animated Glossy Background */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            background: white;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="bg-glow"></div>
+
+    <!-- Header Frame -->
+    <iframe src="header.html" class="fixed top-0 w-full z-50 h-[90px] border-none" scrolling="no"></iframe>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            
+            <!-- Hero Section -->
+            <div class="text-center mb-16 space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full border border-blue-100">
+                    <span class="text-[11px] font-extrabold text-blue-700 uppercase tracking-widest">Connect with our Founder</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-[900] tracking-tighter text-slate-900 leading-tight">
+                    Let's Talk <br/> <span class="gradient-text">Mobility.</span>
+                </h1>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
+                    As we build the foundation of GoSafey Ride in Madhubani, your thoughts, feedback, and queries are invaluable to us. Reach out to us through our direct channels.
+                </p>
+            </div>
+
+            <!-- Bento Grid Layout -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Email (Primary) -->
+                <div class="glass-card p-10 rounded-[40px] md:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="icon-box">📧</div>
+                        <h3 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Direct Email Support</h3>
+                        <p class="text-2xl md:text-3xl font-black text-slate-900 break-words select-all hover:text-blue-600 transition-colors">
+                            dev606733@gmail.com
+                        </p>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-8 font-medium">
+                        For general queries, partnership interests, or ride-related feedback during our pilot operations.
+                    </p>
+                </div>
+
+                <!-- Card 2: Location -->
+                <div class="glass-card p-10 rounded-[40px]">
+                    <div class="icon-box">📍</div>
+                    <h3 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Base of Operations</h3>
+                    <p class="text-xl font-bold text-slate-900">Madhubani, Bihar</p>
+                    <p class="text-sm text-slate-500 mt-4">
+                        Currently serving the Mithila region as part of our early-stage rollout.
+                    </p>
+                </div>
+
+                <!-- Card 3: Team Status -->
+                <div class="glass-card p-10 rounded-[40px] bg-slate-900 text-white border-none lg:col-span-2">
+                    <div class="flex flex-col h-full justify-between">
+                        <div>
+                            <div class="icon-box bg-slate-800 text-white">⏳</div>
+                            <h3 class="text-xl font-black mb-4 italic leading-tight">Response Timelines</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed font-medium">
+                                GoSafey Ride is currently managed by a small, dedicated team. We aim to respond to every query, but as operations are in their early stage, responses may take some time. We appreciate your patience as we work to improve transit in Bihar.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-blue-400">Pilot Phase Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Individual Initiative -->
+                <div class="glass-card p-10 rounded-[40px] border-blue-100 bg-blue-50/30">
+                    <h3 class="text-sm font-black text-blue-600 uppercase tracking-widest mb-4">Founder's Note</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-semibold">
+                        "Every query we receive helps us refine our vehicle audit process and captain training. Thank you for being an early part of our journey."
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Disclaimer Section -->
+            <div class="mt-24 pt-10 border-t border-slate-100 text-center">
+                <p class="text-slate-400 text-xs font-medium leading-relaxed max-w-2xl mx-auto italic">
+                    All services are part of an early-stage pilot rollout. Features, support availability, and response timelines may change as operations evolve. GoSafey Ride is currently an individual founder-led initiative based in Madhubani, Bihar.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Frame -->
+<div id="footer-placeholder"></div>
+<script>
+    // Footer load karne ke liye simple function
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>   
+</body>
+</html>

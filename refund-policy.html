@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund & Cancellation | GoSafey Ride</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #f8fafc; 
+            color: #1e293b; 
+            overflow-x: hidden;
+        }
+
+        /* Glossy Background Effect */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.03);
+        }
+
+        .section-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 12px;
+            border-radius: 99px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="bg-glow"></div>
+
+    <!-- Header Frame -->
+    <iframe src="header.html" class="fixed top-0 w-full z-50 h-[90px] border-none" scrolling="no"></iframe>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Hero Header -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-[900] tracking-tighter text-slate-900 mb-4">
+                    Refund & <span class="gradient-text">Cancellation</span>
+                </h1>
+                <p class="text-slate-500 font-medium italic">Madhubani Pilot Phase • Effective June 2026</p>
+            </div>
+
+            <!-- Intro/Pilot Note -->
+            <div class="glass-card rounded-[40px] p-8 md:p-10 mb-10 text-center border-blue-100">
+                <p class="text-slate-600 leading-relaxed font-medium">
+                    At <b>GoSafey Ride</b>, we aim for total transparency. As we build our mobility network in Bihar, our refund and cancellation policies are designed to be fair to both our riders and our hardworking Captains.
+                </p>
+            </div>
+
+            <!-- Bento Grid Content -->
+            <div class="glass-card rounded-[40px] p-8 md:p-16 space-y-16">
+                
+                <!-- 1. Cancellation -->
+                <section>
+                    <div class="flex flex-col md:flex-row gap-10">
+                        <div class="md:w-1/3">
+                            <span class="section-badge">Policy 01</span>
+                            <h2 class="text-2xl font-black text-slate-900">Cancellation Rules</h2>
+                        </div>
+                        <div class="md:w-2/3 space-y-4">
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Users may cancel a booking before the service begins. For Bike and Car rides, if a cancellation occurs after the Captain has arrived at the pickup location, a <b>nominal cancellation fee</b> may be applicable to compensate the partner for their time and fuel.
+                            </p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+For Logistics services, cancellation timelines may vary based on service type, distance, and partner availability.                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Refund Eligibility -->
+                <section>
+                    <div class="flex flex-col md:flex-row gap-10">
+                        <div class="md:w-1/3">
+                            <span class="section-badge">Policy 02</span>
+                            <h2 class="text-2xl font-black text-slate-900">Refund Eligibility</h2>
+                        </div>
+                        <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                                <p class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-widest">Technical</p>
+                                <p class="text-xs text-slate-500">Double payment due to app or gateway errors.</p>
+                            </div>
+                            <div class="p-5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                                <p class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-widest">Operational</p>
+                                <p class="text-xs text-slate-500">Service not provided after successful payment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. The Timeline (High Contrast for Razorpay) -->
+                <section class="p-10 bg-slate-900 rounded-[30px] text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-600 opacity-20 blur-3xl"></div>
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="text-5xl">🕒</div>
+                        <div>
+                            <h3 class="text-2xl font-black mb-2 italic">The Refund Timeline</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Once a refund is approved by our team, the amount is initiated immediately. It typically takes <b>5 to 7 business days</b> for the funds to reflect in your account. This timeline is subject to your bank's internal processing speed and <b>Payment</b> gateway protocols.
+                            </p>
+                            <div class="mt-4 inline-block px-4 py-2 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-blue-400 border border-white/10">
+                                Original Payment Method Only
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Contact/Support -->
+                <section class="pt-10 border-t border-slate-100">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div>
+                            <h2 class="text-xl font-black text-slate-900">Need help with a refund?</h2>
+                            <p class="text-sm text-slate-500">Reach out to us with your booking ID and payment screenshot.</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="text-right">
+                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Support Email</p>
+                                <a href="mailto:dev606733@gmail.com" class="text-blue-600 font-bold hover:underline">dev606733@gmail.com</a>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-xl shadow-inner shadow-blue-100">📧</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Final Legal Tag -->
+                <div class="text-center">
+                    <p class="text-[10px] text-slate-300 font-bold uppercase tracking-[0.3em]">
+                        GoSafey Ride • Bihar Startup Pilot • 2024
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Frame -->
+<div id="footer-placeholder"></div>
+<script>
+    // Footer load karne ke liye simple function
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>   
+</body>
+</html>
