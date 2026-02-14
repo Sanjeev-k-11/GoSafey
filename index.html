@@ -97,12 +97,15 @@
                     </p>
 
                     <div class="flex flex-wrap gap-4 pt-4">
-                        <div
+                        <a href="GoSafeRide.apk" download
                             class="flex items-center gap-3 px-6 py-4 bg-slate-900 text-white rounded-2xl font-bold cursor-pointer hover:bg-blue-600 transition-all">
+
                             <span>Get the App</span>
+
                             <div class="w-px h-4 bg-white/20"></div>
+
                             <span class="text-xs opacity-70 italic">Coming Soon</span>
-                        </div>
+                        </a>
                         <div
                             class="flex items-center gap-3 px-6 py-4 border-2 border-slate-100 text-slate-900 rounded-2xl font-bold cursor-pointer hover:border-blue-500 transition-all">
                             <span>Fleet Solutions</span>
@@ -130,7 +133,7 @@
                     <div
                         class="phone-frame w-[320px] h-[640px] bg-slate-900 rounded-[60px] border-[12px] border-slate-800 mx-auto relative overflow-hidden shadow-2xl animate-float">
                         <div class="h-full w-full bg-white flex flex-col">
-                            <img src="image.png"/>
+                            <img src="image.png" />
                         </div>
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-3xl"></div>
                     </div>
@@ -374,19 +377,19 @@
             </div>
         </section>
     </main>
-    
+
 
     <!-- Footer Frame -->
-<!-- Iframe hata kar yeh div dalein -->
-<div id="footer-placeholder"></div>
-<script>
-    // Footer load karne ke liye simple function
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>    
+    <!-- Iframe hata kar yeh div dalein -->
+    <div id="footer-placeholder"></div>
+    <script>
+        // Footer load karne ke liye simple function
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 
 </body>
 
