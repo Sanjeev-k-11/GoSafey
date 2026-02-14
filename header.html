@@ -4,27 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GosafeyRide</title>
+    <title>GosafeyRide Navigation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
-            padding-top: 80px;
-            /* Space for fixed nav */
         }
 
         .glass-nav {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Nav link underline effect */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         /* Mobile Menu Sidebar Transition */
         #mobile-menu {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(100%);
         }
 
@@ -34,63 +51,65 @@
 
         /* Overlay Background */
         #menu-overlay {
-            display: none;
-            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            background: rgba(15, 23, 42, 0.4);
             backdrop-filter: blur(4px);
         }
 
         #menu-overlay.show {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
 
-<body class="bg-slate-50">
+<body>
 
     <!-- Background Overlay for Mobile Menu -->
     <div id="menu-overlay" class="fixed inset-0 z-[998]"></div>
 
     <nav class="fixed top-0 w-full z-[100] glass-nav h-20">
-        <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8 h-full flex justify-between items-center">
 
             <!-- Logo -->
-            <a href="index.html" target="_top" class="flex items-center gap-3 shrink-0">
-                <div class="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-xl shadow-lg">
+            <a href="index.html" target="_top" class="flex items-center gap-2.5 shrink-0 group">
+                <div class="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-xl shadow-lg shadow-blue-200 group-hover:scale-105 transition-transform">
                     <span class="font-black text-xl">G</span>
                 </div>
-                <span class="text-xl font-extrabold tracking-tighter text-slate-900">
-                    Gosafey <span class="text-blue-600 italic"> Ride</span>
-                </span>
+                <div class="flex flex-col leading-none">
+                    <span class="text-lg font-[900] tracking-tighter text-slate-900">
+                        GOSAFEY<span class="text-blue-600">RIDE</span>
+                    </span>
+                    <span class="text-[8px] font-black uppercase tracking-[0.3em] text-slate-400">Mobility Hub</span>
+                </div>
             </a>
 
-            <!-- Desktop Nav (Flat List) -->
-            <!-- Adjusted spacing to 'space-x-5' to ensure 8 links fit comfortably -->
-            <div class="hidden lg:flex items-center space-x-5 text-[13px] xl:text-[14px] font-bold text-slate-600">
-                <a href="index.html" target="_top" class="hover:text-blue-600 transition-colors">Home</a>
-                <a href="about.html" target="_top" class="hover:text-blue-600 transition-colors">About Us</a>
-                <a href="services.html" target="_top" class="hover:text-blue-600 transition-colors">Services</a>
-                <a href="safety.html" target="_top" class="hover:text-blue-600 transition-colors">Safety</a>
-                <a href="privacy-policy.html" target="_top"
-                    class="hover:text-blue-600 transition-colors whitespace-nowrap">Privacy Policy</a>
-                <a href="terms.html" target="_top" class="hover:text-blue-600 transition-colors whitespace-nowrap">Terms
-                    & Conditions</a>
-                <a href="refund-policy.html" target="_top"
-                    class="hover:text-blue-600 transition-colors whitespace-nowrap">Refund Policy</a>
-                <a href="contact.html" target="_top" class="hover:text-blue-600 transition-colors">Contact Us</a>
+            <!-- Desktop Nav -->
+            <!-- Note: Using text-[13px] and 2xl:text-[14px] to fit 8 links comfortably -->
+            <div class="hidden lg:flex items-center gap-x-4 xl:gap-x-7 text-[13px] xl:text-[14px] font-bold text-slate-500">
+                <a href="index.html" target="_top" class="nav-link hover:text-blue-600 transition-colors">Home</a>
+                <a href="about.html" target="_top" class="nav-link hover:text-blue-600 transition-colors whitespace-nowrap">About Us</a>
+                <a href="services.html" target="_top" class="nav-link hover:text-blue-600 transition-colors">Services</a>
+                <a href="safety.html" target="_top" class="nav-link hover:text-blue-600 transition-colors">Safety</a>
+                <a href="privacy-policy.html" target="_top" class="nav-link hover:text-blue-600 transition-colors whitespace-nowrap">Privacy Policy</a>
+                <a href="terms.html" target="_top" class="nav-link hover:text-blue-600 transition-colors whitespace-nowrap">Terms</a>
+                <a href="refund-policy.html" target="_top" class="nav-link hover:text-blue-600 transition-colors whitespace-nowrap">Refund Policy</a>
+                <a href="contact.html" target="_top" class="nav-link hover:text-blue-600 transition-colors whitespace-nowrap">Contact Us</a>
             </div>
 
-            <!-- Right Side -->
+            <!-- Right Side Actions -->
             <div class="flex items-center gap-4 shrink-0">
                 <a href="GoSafeRide.apk" download
-                    class="bg-slate-900 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-blue-600 transition-all hidden sm:block">
+                    class="bg-slate-900 text-white px-6 py-2.5 rounded-xl font-bold text-[11px] uppercase tracking-widest hover:bg-blue-600 hover:shadow-xl hover:shadow-blue-200 transition-all hidden sm:block">
                     Get App
                 </a>
 
                 <!-- Mobile Toggle Button -->
-                <button class="lg:hidden text-slate-900 p-2" id="mobile-menu-btn" aria-label="Open Menu">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                <button class="lg:hidden text-slate-900 p-2 hover:bg-slate-100 rounded-xl transition-colors" id="mobile-menu-btn">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
@@ -99,59 +118,81 @@
 
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu"
-        class="fixed inset-y-0 right-0 w-[300px] bg-white shadow-[-10px_0_30px_rgba(0,0,0,0.1)] z-[999] p-8 lg:hidden">
-        <div class="flex justify-between items-center mb-10">
-            <span class="text-2xl font-extrabold text-slate-900">Menu</span>
-            <button id="close-mobile-menu" class="p-2 text-slate-400 hover:text-slate-900 transition-colors">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        class="fixed inset-y-0 right-0 w-[320px] bg-white shadow-[-20px_0_50px_rgba(0,0,0,0.1)] z-[999] flex flex-col lg:hidden">
+        
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-slate-50 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-blue-600 text-white w-8 h-8 flex items-center justify-center rounded-lg shadow-md">
+                    <span class="font-black text-sm">G</span>
+                </div>
+                <span class="text-sm font-black tracking-tighter uppercase">Navigation</span>
+            </div>
+            <button id="close-mobile-menu" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-slate-900 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M6 18L18 6M6 6l12 12" stroke-width="2.5" stroke-linecap="round" />
                 </svg>
             </button>
         </div>
 
-        <div class="flex flex-col gap-6 font-bold text-lg text-slate-600">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="about.html" class="hover:text-blue-600">About Us</a>
-            <a href="services.html" class="hover:text-blue-600">Services</a>
-            <a href="safety.html" class="hover:text-blue-600">Safety</a>
-            <a href="privacy-policy.html" class="hover:text-blue-600 text-base">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-blue-600 text-base">Terms & Conditions</a>
-            <a href="refund-policy.html" class="hover:text-blue-600 text-base">Refund Policy</a>
-            <a href="contact.html" class="pt-4 border-t border-slate-100 hover:text-blue-600">Contact Us</a>
+        <!-- Drawer Links -->
+        <div class="flex-1 overflow-y-auto py-8 px-6 space-y-1">
+            <a href="index.html" class="flex items-center justify-between p-4 rounded-2xl hover:bg-blue-50 text-slate-600 hover:text-blue-600 font-bold transition-all">
+                Home <span class="text-xs opacity-30">→</span>
+            </a>
+            <a href="about.html" class="flex items-center justify-between p-4 rounded-2xl hover:bg-blue-50 text-slate-600 hover:text-blue-600 font-bold transition-all">
+                About Us <span class="text-xs opacity-30">→</span>
+            </a>
+            <a href="services.html" class="flex items-center justify-between p-4 rounded-2xl hover:bg-blue-50 text-slate-600 hover:text-blue-600 font-bold transition-all">
+                Services <span class="text-xs opacity-30">→</span>
+            </a>
+            <a href="safety.html" class="flex items-center justify-between p-4 rounded-2xl hover:bg-blue-50 text-slate-600 hover:text-blue-600 font-bold transition-all">
+                Safety <span class="text-xs opacity-30">→</span>
+            </a>
+            
+            <div class="h-px bg-slate-100 my-4 mx-4"></div>
+            
+            <a href="privacy-policy.html" class="block p-4 rounded-2xl text-slate-500 hover:text-blue-600 font-semibold text-sm">Privacy Policy</a>
+            <a href="terms.html" class="block p-4 rounded-2xl text-slate-500 hover:text-blue-600 font-semibold text-sm">Terms & Conditions</a>
+            <a href="refund-policy.html" class="block p-4 rounded-2xl text-slate-500 hover:text-blue-600 font-semibold text-sm">Refund Policy</a>
+            
+            <a href="contact.html" class="mt-4 flex items-center gap-3 p-4 bg-slate-50 rounded-2xl text-slate-900 font-bold border border-slate-100">
+                <span>Contact Us</span>
+            </a>
+        </div>
 
-            <button
-                class="mt-6 bg-blue-600 text-white py-4 rounded-2xl shadow-lg shadow-blue-200 font-bold active:scale-95 transition-transform">
+        <!-- Drawer Footer -->
+        <div class="p-6">
+            <button class="w-full bg-blue-600 text-white py-4 rounded-2xl shadow-xl shadow-blue-100 font-black text-sm uppercase tracking-widest active:scale-95 transition-all">
                 Download App
             </button>
+            <p class="text-center text-[10px] text-slate-400 font-bold mt-6 uppercase tracking-widest">© 2024 GOSAFEY RIDE</p>
         </div>
     </div>
 
     <script>
-        // Select elements
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileClose = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
         const overlay = document.getElementById('menu-overlay');
 
-        // Open Mobile Menu
-        mobileBtn.addEventListener('click', () => {
+        function openMenu() {
             mobileMenu.classList.add('open');
             overlay.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Disable scroll when menu is open
-        });
+            document.body.style.overflow = 'hidden'; 
+        }
 
-        // Close Mobile Menu Function
         function closeMenu() {
             mobileMenu.classList.remove('open');
             overlay.classList.remove('show');
-            document.body.style.overflow = 'auto'; // Enable scroll
+            document.body.style.overflow = 'auto'; 
         }
 
-        // Close events
+        mobileBtn.addEventListener('click', openMenu);
         mobileClose.addEventListener('click', closeMenu);
         overlay.addEventListener('click', closeMenu);
 
-        // Close menu if a link is clicked (useful for single-page sites)
+        // Close menu if a link is clicked
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
@@ -159,5 +200,4 @@
     </script>
 
 </body>
-
 </html>
